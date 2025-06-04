@@ -8,8 +8,22 @@
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
+    <actions>
+        <action
+                id="com.github.ilbonte.promptpress.actions.CopyForLlmAction"
+                class="com.github.ilbonte.promptpress.actions.CopyForLlmAction"
+                text="Copy for LLMaa"
+                description="Bundle folder and copy to clipboard for LLMs">
+            <!-- la voce compare nel menu destro del Project View -->
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="NewGroup"/>
+        </action>
+    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.ilbonte.promptpress.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.ilbonte.promptpress.startup.MyProjectActivity" />
+        <notificationGroup
+                id="CopyForLLM"
+                displayType="BALLOON"
+                isLogByDefault="false"/>
+
     </extensions>
 </idea-plugin>
